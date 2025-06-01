@@ -1,0 +1,59 @@
+{
+  "equipment": {
+    "solarPanels": {
+      "brand": "Canadian Solar",
+      "model": "CS3W-400",
+      "power": 400,
+      "efficiency": 20.2,
+      "warranty": 25,
+      "description": "Módulos fotovoltaicos de alta eficiência"
+    },
+    "inverter": {
+      "brand": "Growatt",
+      "model": "MIN 3000TL-X",
+      "power": 3000,
+      "efficiency": 98.4,
+      "warranty": 5,
+      "description": "Inversor de conexão à rede com garantia de 5 anos"
+    },
+    "structure": {
+      "material": "Alumínio anodizado e aço inoxidável",
+      "warranty": 10,
+      "description": "Sistema de fixação em alumínio anodizado e aço inoxidável"
+    }
+  },
+  "financial": {
+    "systemCostPerKWp": 4500,
+    "electricityPricePerKWh": 0.9,
+    "paymentOptions": {
+      "cash": {
+        "name": "À Vista (PIX)",
+        "discount": 10,
+        "installments": 1,
+        "interestRate": 0
+      },
+      "creditCard": {
+        "name": "Cartão de Crédito",
+        "discount": 0,
+        "installments": 12,
+        "interestRate": 0
+      },
+      "financing": {
+        "name": "Financiamento Bancário",
+        "discount": 0,
+        "installments": 60,
+        "interestRate": 8
+      }
+    }
+  },
+  "company": {
+    "name": "Volt Energia Solar Ltda",
+    "logo": "/images/logo.png",
+    "address": "Avenida Jose Leon, 2701, Loja 9 - Cidade dos Funcionarios - Fortaleza/CE",
+    "phone": "(85) 98193-4321",
+    "email": "contato@voltenergiasolar.com.br",
+    "website": "www.voltenergiasolar.com.br",
+    "about": "A Volt Energia Solar é uma empresa especializada em soluções de energia solar fotovoltaica, fundada em 2019, oferecendo serviços completos desde o projeto até a instalação e manutenção de sistemas solares residenciais e comerciais.",
+    "cnpj": "34.382.240/0001-10"
+  }
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "id": 7,
+    "title": "Energia Solar do Sistema 1",
+    "description": "Teste",
+    "image": "/images/project7.gif",
+    "category": "Residencial",
+    "location": "Fortaleza",
+    "date": "Janeiro 2025",
+    "power": "5,2 Kwp",
+    "panels": "13 paineis",
+    "economy": "850",
+    "co2Reduction": "2,5 ton ao ano"
+  }
+]

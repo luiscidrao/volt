@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "LUIS CASTELO CIDRÃO NETO",
+    "email": "luiscidraoc@gmail.com",
+    "phone": "85987711234",
+    "address": "Rua Padre Januario Campos, 68, Casa 8  - Parque Manibura",
+    "city": "Fortaleza, Ceará, Brasil",
+    "state": "CE",
+    "postalCode": "60821-705",
+    "consumptionType": "monthly",
+    "consumption": 998,
+    "roofArea": 40,
+    "roofType": "ceramic",
+    "notes": "",
+    "systemSize": 7.3,
+    "panelsCount": 19,
+    "estimatedProduction": 998,
+    "estimatedSavings": 748.5,
+    "co2Reduction": 898.2,
+    "createdAt": "2025-05-05T08:53:44.764Z",
+    "updatedAt": "2025-05-05T08:54:45.020Z"
+  }
+]

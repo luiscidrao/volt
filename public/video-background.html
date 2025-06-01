@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Background</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <video 
+    autoplay 
+    muted 
+    loop 
+    playsinline 
+    webkit-playsinline="true"
+    x-webkit-airplay="allow"
+    preload="auto"
+    poster="/images/logo.png" 
+    id="background-video"
+  >
+    <source src="/images/videopromotional.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <script>
+    // Force video to play with multiple attempts
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('background-video');
+      let playAttempts = 0;
+      const maxAttempts = 10;
+
+      // Function to try playing the video
+      function tryPlayVideo() {
+        playAttempts++;
+
+        video.play().catch(function(error) {
+          console.error(`Error playing video (attempt ${playAttempts}):`, error);
+
+          // If we've tried too many times, try reloading the video
+          if (playAttempts >= maxAttempts) {
+            console.log("Maximum play attempts reached, trying to reload video...");
+            const currentSrc = video.querySelector('source').src;
+            video.querySelector('source').src = '';
+            video.load();
+            setTimeout(() => {
+              video.querySelector('source').src = currentSrc;
+              video.load();
+              video.play().catch(e => console.error("Error playing after reload:", e));
+            }, 1000);
+          }
+        });
+      }
+
+      // Try playing immediately
+      tryPlayVideo();
+
+      // Try multiple times with different delays
+      [100, 500, 1000, 2000, 3000, 5000].forEach(function(delay) {
+        setTimeout(tryPlayVideo, delay);
+      });
+
+      // Also try on user interaction (which is often required on mobile)
+      document.body.addEventListener('click', tryPlayVideo);
+      document.body.addEventListener('touchstart', tryPlayVideo);
+      window.addEventListener('scroll', tryPlayVideo);
+
+      // Make sure video is visible and covers the entire viewport
+      video.style.width = '100vw';
+      video.style.height = '100vh';
+      video.style.objectFit = 'cover';
+
+      // Add a message to the console for debugging
+      console.log("Video background script loaded and running");
+    });
+  </script>
+</body>
+</html>
