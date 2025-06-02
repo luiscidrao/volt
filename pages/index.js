@@ -78,10 +78,10 @@ const HeroCarouselButton = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
   color: white;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   border: none;
   display: flex;
@@ -89,10 +89,17 @@ const HeroCarouselButton = styled.button`
   justify-content: center;
   cursor: pointer;
   z-index: 2;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  box-shadow: ${({ theme }) => theme.shadows.medium};
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  &:active {
+    transform: translateY(-50%) scale(0.95);
   }
 
   &.prev {
@@ -104,141 +111,262 @@ const HeroCarouselButton = styled.button`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 `;
 
 const HeroCarouselDots = styled.div`
   position: absolute;
-  bottom: 20px;
+  bottom: 30px;
   left: 0;
   right: 0;
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
   z-index: 2;
 `;
 
 const HeroCarouselDot = styled.button`
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background-color: ${({ active, theme }) => active ? theme.colors.secondary : 'rgba(255, 255, 255, 0.5)'};
+  background-color: ${({ active, theme }) => active ? theme.colors.secondary : 'rgba(255, 255, 255, 0.3)'};
   border: 2px solid white;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
   &:hover {
-    background-color: ${({ active, theme }) => active ? theme.colors.secondary : 'rgba(255, 255, 255, 0.8)'};
+    background-color: ${({ active, theme }) => active ? theme.colors.secondary : 'rgba(255, 255, 255, 0.6)'};
+    transform: scale(1.2);
+  }
+
+  &:active {
+    transform: scale(0.9);
   }
 `;
 
 const HeroSection = styled.section`
   position: relative;
   color: white;
-  padding: 6rem 2rem;
+  padding: 8rem 2rem 6rem;
   text-align: center;
-  min-height: 500px;
+  min-height: 600px;
+  overflow: hidden;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    padding: 4rem 1rem;
-    min-height: 400px;
+    padding: 6rem 1.5rem 4rem;
+    min-height: 500px;
   }
 `;
 
 const HeroContent = styled.div`
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  animation: fadeIn 1s ease-out;
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 `;
 
 const HeroTitle = styled.h1`
-  font-size: 3rem;
+  font-size: 3.5rem;
+  font-weight: 800;
   margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+  span {
+    color: ${({ theme }) => theme.colors.secondary};
+    position: relative;
+    display: inline-block;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background-color: ${({ theme }) => theme.colors.secondary};
+      opacity: 0.3;
+      z-index: -1;
+    }
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 `;
 
 const HeroSubtitle = styled.p`
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
 `;
 
 const Button = styled.a`
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  border-radius: 4px;
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: ${({ theme }) => theme.borderRadius.full};
+  font-weight: 600;
   text-align: center;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: ${({ theme }) => theme.shadows.medium};
+  font-size: 1.1rem;
+
+  svg {
+    margin-left: 8px;
+  }
 `;
 
 const PrimaryButton = styled(Button)`
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background: ${({ theme }) => theme.colors.gradient.secondary};
   color: white;
+  border: none;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primary};
+    transform: translateY(-3px);
+    box-shadow: ${({ theme }) => theme.shadows.large};
+  }
+
+  &:active {
+    transform: translateY(-1px);
   }
 `;
 
 const SecondaryButton = styled(Button)`
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.15);
   color: white;
   border: 2px solid white;
+  backdrop-filter: blur(4px);
 
   &:hover {
     background-color: white;
     color: ${({ theme }) => theme.colors.dark};
+    transform: translateY(-3px);
+    box-shadow: ${({ theme }) => theme.shadows.large};
+  }
+
+  &:active {
+    transform: translateY(-1px);
   }
 `;
 
 const Section = styled.section`
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+
+  &:nth-child(even) {
+    background-color: ${({ theme }) => theme.colors.lightGray};
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(236, 104, 27, 0.1) 0%, rgba(236, 104, 27, 0) 70%);
+    border-radius: 50%;
+    top: -100px;
+    left: -100px;
+    z-index: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(4, 2, 135, 0.05) 0%, rgba(4, 2, 135, 0) 70%);
+    border-radius: 50%;
+    bottom: -150px;
+    right: -150px;
+    z-index: 0;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    padding: 3rem 1rem;
+    padding: 4rem 1.5rem;
   }
+`;
+
+const SectionContainer = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 `;
 
 const SectionTitle = styled.h2`
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
+  font-size: 2.8rem;
+  margin-bottom: 3.5rem;
   color: ${({ theme }) => theme.colors.dark};
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+
+  span {
+    color: ${({ theme }) => theme.colors.secondary};
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background-color: ${({ theme }) => theme.colors.secondary};
+      opacity: 0.2;
+      z-index: -1;
+    }
+  }
 
   &::after {
     content: '';
     display: block;
-    width: 80px;
+    width: 100px;
     height: 4px;
-    background-color: ${({ theme }) => theme.colors.secondary};
+    background: ${({ theme }) => theme.colors.gradient.secondary};
     margin: 1rem auto 0;
+    border-radius: ${({ theme }) => theme.borderRadius.small};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
   }
 `;
 
@@ -246,37 +374,99 @@ const FeaturesContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 `;
 
 const FeatureCard = styled.div`
   background-color: white;
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  border-radius: ${({ theme }) => theme.borderRadius.large};
+  padding: 2.5rem;
+  box-shadow: ${({ theme }) => theme.shadows.medium};
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid transparent;
+  border-image: ${({ theme }) => theme.colors.gradient.secondary};
+  border-image-slice: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+    z-index: 1;
+    pointer-events: none;
+  }
 
   &:hover {
     transform: translateY(-10px);
+    box-shadow: ${({ theme }) => theme.shadows.large};
+
+    &::before {
+      transform: translateX(100%);
+    }
   }
 `;
 
 const FeatureIcon = styled.div`
-  font-size: 2.5rem;
+  font-size: 3rem;
+  margin-bottom: 1.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: ${({ theme }) => `linear-gradient(135deg, ${theme.colors.primary}15 0%, ${theme.colors.secondary}15 100%)`};
   color: ${({ theme }) => theme.colors.secondary};
-  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+
+  ${FeatureCard}:hover & {
+    transform: scale(1.1) rotate(5deg);
+    color: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) => `linear-gradient(135deg, ${theme.colors.secondary}15 0%, ${theme.colors.primary}15 100%)`};
+  }
 `;
 
 const FeatureTitle = styled.h3`
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
   color: ${({ theme }) => theme.colors.dark};
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: ${({ theme }) => theme.colors.gradient.secondary};
+    transition: width 0.3s ease;
+    border-radius: ${({ theme }) => theme.borderRadius.small};
+  }
+
+  ${FeatureCard}:hover &::after {
+    width: 100%;
+  }
 `;
 
 const FeatureDescription = styled.p`
-  color: #666;
-  line-height: 1.6;
+  color: ${({ theme }) => theme.colors.gray};
+  line-height: 1.7;
+  font-size: 1.05rem;
 `;
 
 const StepsSection = styled(Section)`

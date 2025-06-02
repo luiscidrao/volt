@@ -5,23 +5,42 @@ import { FaSun, FaWhatsapp, FaPhone, FaEnvelope, FaFacebook, FaInstagram, FaLink
 
 const Header = styled.header`
   background-color: ${({ theme }) => theme.colors.light};
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: ${({ theme }) => theme.shadows.medium};
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: all 0.3s ease;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: ${({ theme }) => theme.colors.gradient.secondary};
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease;
+  }
+
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 `;
 
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     flex-direction: column;
-    padding: 1rem;
+    padding: 0.8rem 1rem;
   }
 `;
 
@@ -31,9 +50,14 @@ const Logo = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
   color: ${({ theme }) => theme.colors.primary};
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 
   img {
-    height: 90px;
+    height: 80px;
     width: auto;
     object-fit: contain;
   }
@@ -49,6 +73,7 @@ const Nav = styled.nav`
 const NavList = styled.ul`
   display: flex;
   list-style: none;
+  gap: 0.5rem;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     flex-direction: column;
@@ -57,7 +82,8 @@ const NavList = styled.ul`
 `;
 
 const NavItem = styled.li`
-  margin-left: 2rem;
+  position: relative;
+  margin-left: 1.5rem;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     margin: 0.5rem 0;
@@ -67,10 +93,29 @@ const NavItem = styled.li`
   a {
     color: ${({ theme }) => theme.colors.dark};
     font-weight: 500;
-    transition: color 0.3s;
+    padding: 0.5rem 0;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: ${({ theme }) => theme.colors.secondary};
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease;
+    }
 
     &:hover {
       color: ${({ theme }) => theme.colors.primary};
+
+      &:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
     }
   }
 `;
@@ -78,19 +123,26 @@ const NavItem = styled.li`
 const WhatsAppButton = styled.a`
   display: flex;
   align-items: center;
-  background-color: #25D366;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-weight: 500;
-  transition: background-color 0.3s;
+  padding: 0.6rem 1.2rem;
+  border-radius: ${({ theme }) => theme.borderRadius.full};
+  font-weight: 600;
+  box-shadow: ${({ theme }) => theme.shadows.small};
+  transition: all 0.3s ease;
 
   svg {
     margin-right: 0.5rem;
   }
 
   &:hover {
-    background-color: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: ${({ theme }) => theme.shadows.medium};
+    background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 `;
 
@@ -99,9 +151,20 @@ const Main = styled.main`
 `;
 
 const Footer = styled.footer`
-  background-color: ${({ theme }) => theme.colors.dark};
+  background: linear-gradient(to bottom, ${({ theme }) => theme.colors.dark} 0%, #0f0f1e 100%);
   color: ${({ theme }) => theme.colors.light};
-  padding: 2rem 0;
+  padding: 3rem 0 2rem;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: ${({ theme }) => theme.colors.gradient.secondary};
+  }
 `;
 
 const FooterContainer = styled.div`
@@ -110,45 +173,80 @@ const FooterContainer = styled.div`
   padding: 0 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: 2.5rem;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 `;
 
 const FooterSection = styled.div`
   h3 {
     color: ${({ theme }) => theme.colors.secondary};
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+    position: relative;
+    display: inline-block;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: ${({ theme }) => theme.colors.gradient.secondary};
+      border-radius: ${({ theme }) => theme.borderRadius.small};
+    }
   }
 
   p {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 0.5rem;
+      color: ${({ theme }) => theme.colors.secondary};
+    }
   }
 `;
 
 const SocialLinks = styled.div`
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
 
   a {
     color: ${({ theme }) => theme.colors.light};
     font-size: 1.5rem;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
 
     &:hover {
-      color: ${({ theme }) => theme.colors.secondary};
+      color: white;
+      background-color: ${({ theme }) => theme.colors.secondary};
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(236, 104, 27, 0.3);
     }
   }
 `;
 
 const Copyright = styled.div`
   text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
+  padding: 1.5rem 0;
+  margin-top: 2.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  opacity: 0.8;
 `;
 
 const Layout = ({ children, title = 'Energia Solar | Soluções Sustentáveis' }) => {
@@ -159,6 +257,9 @@ const Layout = ({ children, title = 'Energia Solar | Soluções Sustentáveis' }
         <meta name="description" content="Soluções em energia solar para residências e empresas. Economize na conta de luz e contribua para um futuro sustentável." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
       </Head>
 
       <Header>
