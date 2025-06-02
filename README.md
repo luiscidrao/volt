@@ -166,6 +166,15 @@ Para implantar na Vercel:
 2. Importe o projeto na Vercel
 3. A Vercel detectará automaticamente que é um projeto Next.js e configurará as opções de build
 
+### Configuração para Vercel
+
+Este projeto inclui arquivos de configuração específicos para garantir uma implantação correta na Vercel:
+
+- `.npmrc`: Configura o npm para usar legacy-peer-deps, o que ajuda a resolver problemas de dependências durante a instalação
+- `vercel.json`: Configura o processo de build na Vercel, especificando o comando de instalação com a flag --legacy-peer-deps
+
+Esses arquivos são importantes para garantir que dependências como `mongoose` e `jsonwebtoken` sejam instaladas corretamente durante o processo de build.
+
 ## Licença
 
 Este projeto está licenciado sob a licença MIT.
