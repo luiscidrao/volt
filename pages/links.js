@@ -127,7 +127,7 @@ const Card = styled.div`
   };
   width: 100%;
   max-width: 550px;
-  animation: ${css`${fadeIn}`} 0.8s ease-out;
+  animation: ${fadeIn} 0.8s ease-out;
   border: 1px solid ${({ darkMode }) => 
     darkMode 
       ? `rgba(50, 50, 70, 0.5)`
@@ -152,7 +152,7 @@ const LogoWrapper = styled.div`
   position: relative;
   display: inline-block;
   margin-bottom: 1.5rem;
-  animation: ${css`${float}`} 6s ease-in-out infinite;
+  animation: ${float} 6s ease-in-out infinite;
 `;
 
 const LogoBackground = styled.div`
@@ -322,7 +322,7 @@ const LinkButton = styled.a`
     transition: all 0.3s ease;
 
     ${props => props.iconAnimation && css`
-      animation: ${css`${pulse}`} 2s infinite ease-in-out;
+      animation: ${pulse} 2s infinite ease-in-out;
     `}
   }
 `;
@@ -429,7 +429,7 @@ const LinksPage = () => {
               iconColor="#E1306C"
               darkMode={darkMode}
               className="link-item"
-              style={{animation: `${css`${fadeIn}`} 0.5s both`}}
+              style={{animation: `${fadeIn} 0.5s both`}}
             >
               <FaInstagram /> Instagram
             </LinkButton>
@@ -442,7 +442,7 @@ const LinksPage = () => {
               iconAnimation={true}
               darkMode={darkMode}
               className="link-item"
-              style={{animation: `${css`${fadeIn}`} 0.5s both`}}
+              style={{animation: `${fadeIn} 0.5s both`}}
             >
               <FaWhatsapp /> WhatsApp
             </LinkButton>
@@ -454,7 +454,7 @@ const LinksPage = () => {
               iconColor="#4285F4"
               darkMode={darkMode}
               className="link-item"
-              style={{animation: `${css`${fadeIn}`} 0.5s both`}}
+              style={{animation: `${fadeIn} 0.5s both`}}
             >
               <FaMapMarkerAlt /> Nossa Localização
             </LinkButton>
@@ -466,7 +466,7 @@ const LinksPage = () => {
               iconColor="#040287"
               darkMode={darkMode}
               className="link-item"
-              style={{animation: `${css`${fadeIn}`} 0.5s both`}}
+              style={{animation: `${fadeIn} 0.5s both`}}
             >
               <FaGlobe /> Site Oficial
             </LinkButton>
@@ -478,7 +478,7 @@ const LinksPage = () => {
               iconColor="#D44638"
               darkMode={darkMode}
               className="link-item"
-              style={{animation: `${css`${fadeIn}`} 0.5s both`}}
+              style={{animation: `${fadeIn} 0.5s both`}}
             >
               <FaEnvelope /> E-mail
             </LinkButton>
