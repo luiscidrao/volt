@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import Layout from '../components/Layout';
-import { FaEdit, FaFilter, FaPlus, FaTrash, FaImage, FaCalendarAlt, FaMapMarkerAlt, FaSolarPanel, FaSearch } from 'react-icons/fa';
+import { FaEdit, FaFilter, FaPlus, FaTrash, FaImage, FaCalendarAlt, FaMapMarkerAlt, FaSolarPanel, FaSearch, FaLightbulb } from 'react-icons/fa';
 
 const PageContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding: 1rem;
   }
@@ -17,7 +17,7 @@ const PageTitle = styled.h1`
   color: ${({ theme }) => theme.colors.dark};
   margin-bottom: 1rem;
   text-align: center;
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 2rem;
   }
@@ -31,7 +31,7 @@ const PageDescription = styled.p`
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 1rem;
   }
@@ -51,7 +51,7 @@ const SectionTitle = styled.h2`
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
-  
+
   svg {
     margin-right: 0.5rem;
     color: ${({ theme }) => theme.colors.secondary};
@@ -63,24 +63,24 @@ const InstructionText = styled.div`
   color: #555;
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  
+
   p {
     margin-bottom: 1rem;
   }
-  
+
   ul, ol {
     margin-left: 1.5rem;
     margin-bottom: 1.5rem;
   }
-  
+
   li {
     margin-bottom: 0.5rem;
   }
-  
+
   strong {
     color: ${({ theme }) => theme.colors.dark};
   }
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 1rem;
   }
@@ -125,7 +125,7 @@ const StepContainer = styled.div`
   margin-bottom: 2rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid #eee;
-  
+
   &:last-child {
     border-bottom: none;
     padding-bottom: 0;
@@ -138,7 +138,7 @@ const StepTitle = styled.h3`
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  
+
   svg {
     margin-right: 0.5rem;
     color: ${({ theme }) => theme.colors.secondary};
@@ -151,21 +151,21 @@ const TipBox = styled.div`
   padding: 1.5rem;
   margin: 1.5rem 0;
   border-radius: 0 8px 8px 0;
-  
+
   h4 {
     color: ${({ theme }) => theme.colors.accent};
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
-    
+
     svg {
       margin-right: 0.5rem;
     }
   }
-  
+
   p {
     margin-bottom: 0.5rem;
-    
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -181,7 +181,7 @@ const GerenciadorInstrucoesPage = () => {
           Aprenda a utilizar o sistema de gerenciamento de projetos para adicionar, editar e gerenciar
           os projetos realizados pela SolarTech que são exibidos no site.
         </PageDescription>
-        
+
         <Section>
           <SectionTitle><FaEdit /> Visão Geral do Sistema</SectionTitle>
           <InstructionText>
@@ -201,16 +201,16 @@ const GerenciadorInstrucoesPage = () => {
               <li>Organizar a exibição dos projetos na página</li>
             </ul>
           </InstructionText>
-          
+
           <ImageContainer>
             <Image src="/images/gerenciador-visao-geral.jpg" alt="Visão geral do gerenciador de projetos" />
             <ImageCaption>Visão geral da página de projetos com o sistema de gerenciamento</ImageCaption>
           </ImageContainer>
         </Section>
-        
+
         <Section>
           <SectionTitle><FaPlus /> Adicionando Novos Projetos</SectionTitle>
-          
+
           <StepContainer>
             <StepTitle><FaPlus /> Passo 1: Acessar o Formulário de Adição</StepTitle>
             <InstructionText>
@@ -223,7 +223,7 @@ const GerenciadorInstrucoesPage = () => {
                 do projeto, como título, descrição, imagem, categoria, etc.
               </p>
             </InstructionText>
-            
+
             <CodeBlock>
 {`// Dados de exemplo para projetos
 const projectsData = [
@@ -244,7 +244,7 @@ const projectsData = [
 ];`}
             </CodeBlock>
           </StepContainer>
-          
+
           <StepContainer>
             <StepTitle><FaEdit /> Passo 2: Preencher as Informações do Projeto</StepTitle>
             <InstructionText>
@@ -266,7 +266,7 @@ const projectsData = [
                 <li><strong>co2Reduction:</strong> A redução anual de CO₂</li>
               </ul>
             </InstructionText>
-            
+
             <CodeBlock>
 {`// Exemplo de novo projeto a ser adicionado
 {
@@ -284,7 +284,7 @@ const projectsData = [
 }`}
             </CodeBlock>
           </StepContainer>
-          
+
           <StepContainer>
             <StepTitle><FaImage /> Passo 3: Adicionar a Imagem do Projeto</StepTitle>
             <InstructionText>
@@ -299,7 +299,7 @@ const projectsData = [
                 <li>Referencie a imagem no objeto do projeto usando o caminho relativo (ex: <code>/images/nome-da-imagem.jpg</code>)</li>
               </ol>
             </InstructionText>
-            
+
             <TipBox>
               <h4><FaLightbulb /> Dica</h4>
               <p>
@@ -309,10 +309,10 @@ const projectsData = [
             </TipBox>
           </StepContainer>
         </Section>
-        
+
         <Section>
           <SectionTitle><FaEdit /> Editando Projetos Existentes</SectionTitle>
-          
+
           <InstructionText>
             <p>
               Para editar um projeto existente, localize o objeto correspondente na matriz <code>projectsData</code>
@@ -320,7 +320,7 @@ const projectsData = [
               categoria, etc.
             </p>
           </InstructionText>
-          
+
           <CodeBlock>
 {`// Exemplo de edição de um projeto existente
 // Localize o projeto pelo ID
@@ -332,7 +332,7 @@ projectToEdit.description = 'Nova descrição atualizada...';
 projectToEdit.power = '125 kWp'; // Atualizando a potência
 projectToEdit.economy = 'R$ 19.000/mês'; // Atualizando a economia`}
           </CodeBlock>
-          
+
           <TipBox>
             <h4><FaLightbulb /> Dica</h4>
             <p>
@@ -341,10 +341,10 @@ projectToEdit.economy = 'R$ 19.000/mês'; // Atualizando a economia`}
             </p>
           </TipBox>
         </Section>
-        
+
         <Section>
           <SectionTitle><FaTrash /> Removendo Projetos</SectionTitle>
-          
+
           <InstructionText>
             <p>
               Para remover um projeto, você pode simplesmente excluir o objeto correspondente da matriz <code>projectsData</code>.
@@ -352,7 +352,7 @@ projectToEdit.economy = 'R$ 19.000/mês'; // Atualizando a economia`}
               propriedade <code>hidden: true</code> ao objeto do projeto.
             </p>
           </InstructionText>
-          
+
           <CodeBlock>
 {`// Opção 1: Remover completamente o projeto
 // Filtre a matriz para excluir o projeto com ID específico
@@ -367,10 +367,10 @@ projectToHide.hidden = true;
 const visibleProjects = projectsData.filter(project => !project.hidden);`}
           </CodeBlock>
         </Section>
-        
+
         <Section>
           <SectionTitle><FaFilter /> Utilizando os Filtros</SectionTitle>
-          
+
           <InstructionText>
             <p>
               O sistema de gerenciamento de projetos inclui funcionalidades de filtragem que permitem aos usuários
@@ -387,12 +387,12 @@ const visibleProjects = projectsData.filter(project => !project.hidden);`}
               e retornam apenas os projetos que correspondem aos critérios selecionados.
             </p>
           </InstructionText>
-          
+
           <ImageContainer>
             <Image src="/images/gerenciador-filtros.jpg" alt="Sistema de filtros de projetos" />
             <ImageCaption>Interface de filtros para busca e organização de projetos</ImageCaption>
           </ImageContainer>
-          
+
           <StepContainer>
             <StepTitle><FaSearch /> Como os Filtros Funcionam</StepTitle>
             <InstructionText>
@@ -402,7 +402,7 @@ const visibleProjects = projectsData.filter(project => !project.hidden);`}
                 aos critérios.
               </p>
             </InstructionText>
-            
+
             <CodeBlock>
 {`// Filtrar projetos com base nos filtros e termo de busca
 const filteredProjects = projectsData.filter(project => {
@@ -410,7 +410,7 @@ const filteredProjects = projectsData.filter(project => {
   if (filters.categoria && project.category !== filters.categoria) {
     return false;
   }
-  
+
   // Filtrar por potência
   if (filters.potencia) {
     const powerValue = parseFloat(project.power);
@@ -418,23 +418,23 @@ const filteredProjects = projectsData.filter(project => {
     if (filters.potencia === 'medio' && (powerValue <= 10 || powerValue > 50)) return false;
     if (filters.potencia === 'grande' && powerValue <= 50) return false;
   }
-  
+
   // Filtrar por ano
   if (filters.ano && !project.date.includes(filters.ano)) {
     return false;
   }
-  
+
   // Filtrar por termo de busca
   if (searchTerm && !project.title.toLowerCase().includes(searchTerm.toLowerCase()) && 
       !project.description.toLowerCase().includes(searchTerm.toLowerCase()) &&
       !project.location.toLowerCase().includes(searchTerm.toLowerCase())) {
     return false;
   }
-  
+
   return true;
 });`}
             </CodeBlock>
-            
+
             <TipBox>
               <h4><FaLightbulb /> Dica</h4>
               <p>
@@ -445,10 +445,10 @@ const filteredProjects = projectsData.filter(project => {
             </TipBox>
           </StepContainer>
         </Section>
-        
+
         <Section>
           <SectionTitle><FaCalendarAlt /> Melhores Práticas</SectionTitle>
-          
+
           <InstructionText>
             <p>
               Para manter o sistema de gerenciamento de projetos organizado e eficiente, recomendamos seguir estas
@@ -482,10 +482,10 @@ const filteredProjects = projectsData.filter(project => {
             </ol>
           </InstructionText>
         </Section>
-        
+
         <Section>
           <SectionTitle><FaMapMarkerAlt /> Suporte e Ajuda</SectionTitle>
-          
+
           <InstructionText>
             <p>
               Se você encontrar dificuldades ao usar o sistema de gerenciamento de projetos ou tiver dúvidas sobre
