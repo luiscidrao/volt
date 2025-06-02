@@ -429,7 +429,7 @@ const LinksPage = () => {
               iconColor="#E1306C"
               darkMode={darkMode}
               className="link-item"
-              style={{animation: `${fadeIn.toString()} 0.5s both`}}
+              style={{animation: `${css`${fadeIn}`} 0.5s both`}}
             >
               <FaInstagram /> Instagram
             </LinkButton>
@@ -442,7 +442,7 @@ const LinksPage = () => {
               iconAnimation={true}
               darkMode={darkMode}
               className="link-item"
-              style={{animation: `${fadeIn.toString()} 0.5s both`}}
+              style={{animation: `${css`${fadeIn}`} 0.5s both`}}
             >
               <FaWhatsapp /> WhatsApp
             </LinkButton>
@@ -454,7 +454,7 @@ const LinksPage = () => {
               iconColor="#4285F4"
               darkMode={darkMode}
               className="link-item"
-              style={{animation: `${fadeIn.toString()} 0.5s both`}}
+              style={{animation: `${css`${fadeIn}`} 0.5s both`}}
             >
               <FaMapMarkerAlt /> Nossa Localização
             </LinkButton>
@@ -466,7 +466,7 @@ const LinksPage = () => {
               iconColor="#040287"
               darkMode={darkMode}
               className="link-item"
-              style={{animation: `${fadeIn.toString()} 0.5s both`}}
+              style={{animation: `${css`${fadeIn}`} 0.5s both`}}
             >
               <FaGlobe /> Site Oficial
             </LinkButton>
@@ -478,7 +478,7 @@ const LinksPage = () => {
               iconColor="#D44638"
               darkMode={darkMode}
               className="link-item"
-              style={{animation: `${fadeIn.toString()} 0.5s both`}}
+              style={{animation: `${css`${fadeIn}`} 0.5s both`}}
             >
               <FaEnvelope /> E-mail
             </LinkButton>
