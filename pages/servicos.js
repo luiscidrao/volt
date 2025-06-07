@@ -516,7 +516,7 @@ const ServicosPage = () => {
   ];
 
   return (
-    <Layout title="Serviços | SolarTech">
+      <Layout title="Serviços | Volt">
       <PageContainer>
         <PageTitle>Nossos Serviços</PageTitle>
         <PageDescription>

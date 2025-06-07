@@ -418,7 +418,7 @@ const ProjetosPage = () => {
   };
 
   return (
-    <Layout title="Projetos Realizados | SolarTech">
+    <Layout title="Projetos Realizados | Volt">
       <PageContainer>
         <PageTitle>Projetos Realizados</PageTitle>
         <PageDescription>

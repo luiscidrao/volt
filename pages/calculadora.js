@@ -332,7 +332,7 @@ const CalculadoraPage = () => {
   };
 
   return (
-    <Layout title="Calculadora Solar | SolarTech">
+    <Layout title="Calculadora Solar | Volt">
       <PageContainer>
         <PageTitle>Calculadora de Energia Solar</PageTitle>
         <PageDescription>

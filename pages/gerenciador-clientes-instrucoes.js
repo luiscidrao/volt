@@ -174,7 +174,7 @@ const TipBox = styled.div`
 
 const GerenciadorClientesInstrucoesPage = () => {
   return (
-    <Layout title="Instruções do Gerenciador de Clientes | SolarTech">
+    <Layout title="Instruções do Gerenciador de Clientes | Volt">
       <PageContainer>
         <PageTitle>Instruções do Gerenciador de Clientes</PageTitle>
         <PageDescription>

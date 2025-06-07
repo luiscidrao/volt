@@ -1,23 +1,9 @@
 [
   {
     "id": 1,
-    "text": "Instalamos painéis solares em nossa residência há 6 meses e já percebemos uma redução significativa na conta de luz. O atendimento da SolarTech foi excelente desde o primeiro contato até a instalação final.",
-    "name": "João Silva",
-    "location": "São Paulo, SP",
+    "text": "Contratei os serviços da Empresa Volt Energia Solar e fui super bem atendido. Os serviços superaram minhas expectativas e recomendo para quem interessar,  a utilização da energia solar, através dessa empresa.",
+    "name": "Ernany Cunha",
+    "location": "Fortaleza, CE",
     "avatar": "/images/avatar1.jpg"
-  },
-  {
-    "id": 2,
-    "text": "Como empresa, estávamos buscando reduzir nossos custos operacionais e a SolarTech nos apresentou uma solução perfeita. O retorno do investimento foi mais rápido do que esperávamos.",
-    "name": "Maria Oliveira",
-    "location": "Rio de Janeiro, RJ",
-    "avatar": "/images/avatar2.jpg"
-  },
-  {
-    "id": 3,
-    "text": "A equipe da SolarTech foi extremamente profissional e transparente durante todo o processo. Os painéis foram instalados no prazo prometido e a economia na conta de energia tem sido impressionante.",
-    "name": "Carlos Santos",
-    "location": "Belo Horizonte, MG",
-    "avatar": "/images/avatar3.jpg"
   }
 ]
