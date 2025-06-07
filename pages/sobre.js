@@ -784,49 +784,10 @@ const SobrePage = () => {
                 <FaUsers />
               </TeamMemberPhoto>
               <TeamMemberInfo>
-                <TeamMemberName>Carlos Oliveira</TeamMemberName>
+                <TeamMemberName>Luis Castelo Cidrão</TeamMemberName>
                 <TeamMemberPosition>CEO e Fundador</TeamMemberPosition>
                 <TeamMemberBio>
-                  Engenheiro Elétrico com experiência no setor de energia. Visionário e apaixonado por tecnologias sustentáveis, lidera a Volt Energia Solar com foco em inovação e excelência desde 2019.
-                </TeamMemberBio>
-              </TeamMemberInfo>
-            </TeamMemberCard>
-
-            <TeamMemberCard>
-              <TeamMemberPhoto>
-                <FaUsers />
-              </TeamMemberPhoto>
-              <TeamMemberInfo>
-                <TeamMemberName>Ana Souza</TeamMemberName>
-                <TeamMemberPosition>Diretora de Operações</TeamMemberPosition>
-                <TeamMemberBio>
-                  Engenheira Civil com especialização em Gestão de Projetos. Responsável por garantir a excelência operacional e a satisfação dos clientes em todos os projetos.
-                </TeamMemberBio>
-              </TeamMemberInfo>
-            </TeamMemberCard>
-
-            <TeamMemberCard>
-              <TeamMemberPhoto>
-                <FaUsers />
-              </TeamMemberPhoto>
-              <TeamMemberInfo>
-                <TeamMemberName>Marcos Santos</TeamMemberName>
-                <TeamMemberPosition>Diretor Técnico</TeamMemberPosition>
-                <TeamMemberBio>
-                  Engenheiro Eletricista com mestrado em Sistemas Fotovoltaicos. Lidera a equipe técnica e o desenvolvimento de soluções inovadoras para cada projeto.
-                </TeamMemberBio>
-              </TeamMemberInfo>
-            </TeamMemberCard>
-
-            <TeamMemberCard>
-              <TeamMemberPhoto>
-                <FaUsers />
-              </TeamMemberPhoto>
-              <TeamMemberInfo>
-                <TeamMemberName>Juliana Costa</TeamMemberName>
-                <TeamMemberPosition>Diretora Comercial</TeamMemberPosition>
-                <TeamMemberBio>
-                  Especialista em Marketing com vasta experiência no setor de energia renovável. Responsável por desenvolver estratégias comerciais e relacionamento com clientes.
+                 Eletrotécnico com experiência no setor de energia. Visionário e apaixonado por tecnologias sustentáveis, lidera a Volt Energia Solar com foco em inovação e excelência desde 2019.
                 </TeamMemberBio>
               </TeamMemberInfo>
             </TeamMemberCard>

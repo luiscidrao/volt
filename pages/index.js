@@ -525,7 +525,7 @@ const StepDescription = styled.p`
 
 const CtaSection = styled(Section)`
   background-color: ${({ theme }) => theme.colors.primary};
-  color: white;
+  color: #666;
   text-align: center;
 `;
 
